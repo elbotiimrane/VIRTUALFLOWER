@@ -1,66 +1,76 @@
 <h1 align="center">🌸 Virtual Flowers</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&color=FF69B4&center=true&vCenter=true&width=700&lines=Send+Flowers+That+Feel+Alive;Interactive+%2B+Realistic+%2B+Emotional;Turn+Messages+Into+Moments" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=2200&pause=700&color=FF69B4&center=true&vCenter=true&width=750&lines=Send+Flowers+That+Feel+Alive;Not+Just+A+Message+—+A+Moment;Interactive+%2B+Emotional+%2B+Realistic" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Active-ff69b4?style=for-the-badge&logo=github">
-  <img src="https://img.shields.io/badge/Experience-Premium-black?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Focus-Emotion%20%26%20Interaction-purple?style=for-the-badge">
+  <a href="#"><img src="https://img.shields.io/badge/🚀 Live Demo-Coming Soon-ff69b4?style=for-the-badge"></a>
+  <img src="https://img.shields.io/badge/Status-Active-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Built%20With-JS%20%7C%20CSS%20%7C%20HTML-purple?style=for-the-badge">
 </p>
 
 ---
 
-## 🌿 Overview
+## 🌿 What is this?
 
-**Virtual Flowers** is an interactive web experience where users send **animated, lifelike flowers** that feel alive — not just static visuals.
+**Virtual Flowers** is an interactive web experience where users send **animated, lifelike flowers** that create a real emotional moment.
 
-It’s not a message.  
-It’s a **moment**.
+> You don’t send text.  
+> You send something that *arrives*.
 
 ---
 
-## 🎥 Live Experience
+## 🎬 Experience Preview
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="650"/>
-</p>
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212749695-2c8e0cfa-7f6f-4c6d-b0d4-6e6e2c9f5c44.gif" width="500"/>
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="700"/>
 </p>
 
 ---
 
-## ✨ Features
+## ⚡ Why this is different
 
-🌸 **Lifelike Motion**
-- Subtle wind sway, breathing animation, organic movement  
-
-🌿 **Procedural Generation**
-- Every bouquet is slightly different (no symmetry)  
-
-💡 **3D Depth & Parallax**
-- Mouse interaction creates immersive movement  
-
-💎 **Advanced Visual System**
-- Lighting, shadows, and material realism  
-
-💌 **Emotional Messaging**
-- Messages appear after the animation moment  
-
-🎨 **Customization**
-- Flowers, colors, and arrangement control  
+| обычное message | 🌸 Virtual Flowers |
+|------|----------------|
+| Static text | Animated experience |
+| Instantly ignored | Builds anticipation |
+| No emotion | Visual + emotional impact |
+| Forgettable | Memorable moment |
 
 ---
 
-## ⚡ Interaction Flow
+## ✨ Core Features
+
+### 🌸 Alive Animations
+- Wind sway, breathing motion, organic drift  
+- No static elements  
+
+### 🌿 Procedural Realism
+- Every bouquet is unique  
+- Imperfect, natural variation  
+
+### 💡 Depth & Interaction
+- Mouse-based parallax  
+- Layered 3D illusion  
+
+### 💎 Premium Visual System
+- Lighting, shadows, materials  
+- Glass/ceramic rendering  
+
+### 💌 Emotional Delivery
+- Message appears AFTER animation  
+- Designed for impact timing  
+
+---
+
+## 🧠 How it Works
 
 ```mermaid
-graph LR
-A[Select Flowers] --> B[Customize Bouquet]
-B --> C[Add Message]
-C --> D[Send Experience]
-D --> E[Receiver Sees Animation]
-E --> F[Emotional Impact]
+sequenceDiagram
+User->>App: Create bouquet
+User->>App: Add message
+User->>App: Send
+App->>Receiver: Deliver animation
+Receiver->>Experience: Watches flowers appear
+Experience->>Receiver: Message revealed
