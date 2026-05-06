@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloomNote Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Floral Mood Studio</p>
+        <h1>Bouquets that feel cinematic, intimate, and unforgettable.</h1>
+        <p class="hero-text">
+          Compose a bouquet, shape its mood, write a note, pair it with music, and share it like a private floral editorial.
+        </p>
+        <div class="hero-actions">
+          <a href="#builder" class="button button-primary">Start Designing</a>
+          <button class="button button-secondary" id="randomizeBtn" type="button">Surprise Me</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="floating-stem stem-1"></div>
+        <div class="floating-stem stem-2"></div>
+        <div class="hero-card-inner">
+          <p class="hero-card-label">Curated Direction</p>
+          <p class="hero-card-title">Noir peonies, velvet light, and a note that lingers.</p>
+          <p class="hero-card-meta">Dark romance with a polished studio finish</p>
+        </div>
+      </div>
+    </header>
+
+    <main id="builder" class="builder-grid">
+      <section class="controls-panel">
+        <div class="panel-section">
+          <div class="section-header">
+            <p class="section-kicker">1. Bouquet</p>
+            <h2>Pick your flowers</h2>
+          </div>
+          <div class="flower-grid" id="flowerGrid"></div>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-header">
+            <p class="section-kicker">2. Look & feel</p>
+            <h2>Customize the scene</h2>
+          </div>
+          <div class="studio-presets">
+            <p class="studio-label">Quick moods</p>
+            <div class="preset-grid" id="presetGrid">
+              <button class="preset-pill" type="button" data-preset="romantic">Romantic</button>
+              <button class="preset-pill" type="button" data-preset="sunlit">Sunlit</button>
+              <button class="preset-pill" type="button" data-preset="midnight">Midnight</button>
+              <button class="preset-pill" type="button" data-preset="editorial">Editorial</button>
+            </div>
+          </div>
+
+          <div class="studio-row">
+            <label class="field field-compact">
+              <span>Bouquet wrap</span>
+              <input type="color" id="wrapColor" value="#f4d3d8">
+            </label>
+            <label class="field field-compact">
+              <span>Accent ribbon</span>
+              <input type="color" id="accentColor" value="#ce7c87">
+            </label>
+          </div>
+
+          <div class="swatch-section">
+            <div class="swatch-group">
+              <p class="studio-label">Wrap swatches</p>
+              <div class="swatch-grid" id="wrapSwatches"></div>
+            </div>
+            <div class="swatch-group">
+              <p class="studio-label">Accent swatches</p>
+              <div class="swatch-grid" id="accentSwatches"></div>
+            </div>
+          </div>
+
+          <div class="option-stack">
+            <div class="option-group">
+              <p class="studio-label">Background</p>
+              <div class="option-chips" id="backgroundOptions"></div>
+            </div>
+            <div class="option-group">
+              <p class="studio-label">Holder</p>
+              <div class="option-chips" id="holderOptions"></div>
+            </div>
+            <div class="option-group">
+              <p class="studio-label">Message card</p>
+              <div class="option-chips" id="cardOptions"></div>
+            </div>
+          </div>
+
+          <div class="density-block">
+            <div class="density-header">
+              <div>
+                <p class="studio-label">Bouquet fullness</p>
+                <p class="density-value" id="densityLabel">16 stems for a lush bouquet.</p>
+              </div>
+              <span class="density-badge" id="densityBadge">Lush</span>
+            </div>
+            <label class="field field-range">
+              <input id="flowerDensity" type="range" min="8" max="36" step="1" value="16">
+            </label>
+          </div>
+
+          <div class="style-summary" id="styleSummary">
+            <p class="studio-label">Current direction</p>
+            <p class="summary-title" id="summaryTitle">Romantic dawn bouquet</p>
+            <p class="summary-copy" id="summaryCopy">Soft paper holder, airy blush wrap, and a warm elegant card.</p>
+          </div>
+
+          <div class="studio-hidden">
+            <select id="backgroundTheme">
+              <option value="dawn">Dawn Blush</option>
+              <option value="garden">Garden Mist</option>
+              <option value="midnight">Midnight Velvet</option>
+              <option value="sunset">Apricot Sunset</option>
+              <option value="noir">Noir Rose</option>
+              <option value="ivory">Ivory Studio</option>
+              <option value="moss">Moss Room</option>
+              <option value="wine">Wine Velvet</option>
+            </select>
+            <select id="holderStyle">
+              <option value="paper">Soft Paper</option>
+              <option value="glass">Frosted Glass</option>
+              <option value="satin">Satin Wrap</option>
+              <option value="luxe">Luxe Bouquet</option>
+              <option value="paperbow">Paper Bow</option>
+              <option value="winebow">Wine Bow</option>
+              <option value="midnightpaper">Midnight Paper</option>
+              <option value="starnet">Starry Net</option>
+              <option value="velvet">Velvet Sleeve</option>
+              <option value="ceramic">Ceramic Vase</option>
+              <option value="linen">Linen Tie</option>
+              <option value="metallic">Metallic Wrap</option>
+            </select>
+            <select id="cardStyle">
+              <option value="romantic">Romantic</option>
+              <option value="modern">Modern</option>
+              <option value="storybook">Storybook</option>
+              <option value="minimal">Minimal</option>
+              <option value="noir">Noir</option>
+              <option value="editorial">Editorial</option>
+              <option value="letterpress">Letterpress</option>
+              <option value="vellum">Vellum</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-header">
+            <p class="section-kicker">3. Message</p>
+            <h2>Add your note</h2>
+          </div>
+          <label class="field">
+            <span>Recipient name</span>
+            <input id="recipientName" type="text" maxlength="40" placeholder="For Maya">
+          </label>
+          <label class="field">
+            <span>Headline</span>
+            <input id="messageTitle" type="text" maxlength="60" placeholder="A little bouquet for your day">
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea id="messageBody" rows="5" maxlength="280" placeholder="You’ve been on my mind, so I made something bright just for you."></textarea>
+          </label>
+          <label class="field">
+            <span>Signature</span>
+            <input id="senderName" type="text" maxlength="40" placeholder="From Alex">
+          </label>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-header">
+            <p class="section-kicker">4. Music</p>
+            <h2>Attach a soundtrack</h2>
+          </div>
+          <label class="field">
+            <span>Track or playlist title</span>
+            <input id="songTitle" type="text" maxlength="60" placeholder="Bloom in Blue">
+          </label>
+          <label class="field">
+            <span>Spotify or audio link</span>
+            <input id="songUrl" type="url" placeholder="https://open.spotify.com/track/...">
+          </label>
+          <p class="help-text">Paste a Spotify track, album, playlist, or episode link. Direct `.mp3`, `.wav`, and `.ogg` links still work too.</p>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-header">
+            <p class="section-kicker">5. Share</p>
+            <h2>Send the bouquet</h2>
+          </div>
+          <label class="field">
+            <span>Email address</span>
+            <input id="emailAddress" type="email" placeholder="friend@example.com">
+          </label>
+          <div class="share-actions">
+            <button class="button button-primary" id="copyLinkBtn" type="button">Copy Share Link</button>
+            <button class="button button-secondary" id="emailBtn" type="button">Send by Email</button>
+          </div>
+          <p class="share-status" id="shareStatus">Your bouquet link updates instantly as you edit.</p>
+        </div>
+      </section>
+
+      <section class="preview-panel">
+        <div class="preview-frame theme-dawn style-romantic" id="previewFrame">
+          <div class="scene-shell" id="sceneShell">
+            <div class="scene-layer scene-background" id="sceneBackground">
+              <div class="scene-light"></div>
+              <div class="background-orb orb-a"></div>
+              <div class="background-orb orb-b"></div>
+              <div class="background-haze haze-a"></div>
+              <div class="background-haze haze-b"></div>
+              <div class="atmosphere-particles" id="atmosphereParticles"></div>
+            </div>
+            <div class="scene-layer scene-midground" id="sceneMidground">
+              <div class="bouquet-stage bouquet-stage-mid">
+                <div class="bouquet-cast-shadow"></div>
+                <div class="bouquet-wrap" id="bouquetWrap"></div>
+              </div>
+            </div>
+            <div class="scene-layer scene-foreground" id="sceneForeground">
+              <div class="bouquet-stage bouquet-stage-front">
+                <div class="bouquet-flowers" id="bouquetFlowers"></div>
+              </div>
+            </div>
+          </div>
+          <article class="message-card" id="messageCard">
+            <p class="recipient" id="previewRecipient">For someone special</p>
+            <p class="bouquet-meaning" id="bouquetMeaning">A quiet bouquet of affection and warmth.</p>
+            <h3 id="previewTitle">A little bouquet for your day</h3>
+            <p class="message-body" id="previewBody">You’ve been on my mind, so I made something bright just for you.</p>
+            <p class="signature" id="previewSender">From someone who cares</p>
+          </article>
+          <div class="music-player" id="musicPlayer">
+            <div class="music-header">
+              <div>
+                <p class="music-label">Soundtrack</p>
+                <p class="music-title" id="previewSongTitle">No song selected</p>
+              </div>
+              <span class="music-badge" id="musicBadge">Add a link</span>
+            </div>
+            <div class="music-connection" id="musicConnection">
+              <div class="spotify-shell" id="spotifyShell" hidden>
+                <div class="spotify-meta">
+                  <div class="spotify-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div>
+                    <p class="spotify-kicker">Connected from Spotify</p>
+                    <p class="spotify-type" id="spotifyTypeLabel">Track</p>
+                  </div>
+                  <a class="spotify-open" id="spotifyOpenLink" href="#" target="_blank" rel="noreferrer">Open</a>
+                </div>
+                <iframe
+                  id="spotifyEmbed"
+                  title="Spotify embed"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+              <div class="audio-shell" id="audioShell" hidden>
+                <audio id="audioPlayer" controls preload="none"></audio>
+              </div>
+              <div class="music-empty" id="musicEmpty">
+                Paste a Spotify link to make the bouquet feel connected, not generic.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <template id="flowerOptionTemplate">
+    <button class="flower-option" type="button">
+      <span class="flower-emoji"></span>
+      <span class="flower-name"></span>
+    </button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
